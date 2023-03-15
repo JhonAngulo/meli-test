@@ -1,0 +1,13 @@
+
+@font-face {
+  font-family: 'Proxima Nova';
+  src:  url("https://http2.mlstatic.com/ui/webfonts/v3.0.0/proxima-nova/proximanova-light.woff2") format('woff2'),
+        url("https://http2.mlstatic.com/ui/webfonts/v3.0.0/proxima-nova/proximanova-regular.woff2") format('woff2'),
+        url("https://http2.mlstatic.com/ui/webfonts/v3.0.0/proxima-nova/proximanova-semibold.woff2") format('woff2')
+}
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+
+body {
+  font-family: $font_1;
+  color: $text-primary-color
+}
