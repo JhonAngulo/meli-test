@@ -1,0 +1,15 @@
+{
+  "name": "server-api",
+  "version": "1.0.0",
+  "description": "api data test meli",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index"
+  },
+  "author": "Jhon Manuel Angulo Moncada",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "nodemon": "^2.0.21"
+  }
+}

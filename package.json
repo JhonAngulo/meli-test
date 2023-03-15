@@ -1,0 +1,18 @@
+{
+  "name": "mili_test",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "server-api",
+      "web-client"
+    ]
+  },
+  "scripts": {
+    "start": "lerna run --parallel start",
+    "dev": "lerna run --parallel dev",
+    "build": "lerna run build"
+  },
+  "devDependencies": {
+    "lerna": "^6.5.1"
+  }
+}
