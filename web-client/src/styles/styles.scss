@@ -13,18 +13,9 @@
 // fonts
 @import 'components/fonts';
 
-
-
 // components
 @import 'components/searchBar';
+@import 'components/productCar';
 
-
-// // cards
-// @import 'components/showCard';
-
-
-// // chip
-// @import 'components/chip';
-
-// // loadingSearchBar
-// @import 'components/loadingSearchBar';
+// pages
+@import 'pages/listProducts';

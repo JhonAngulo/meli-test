@@ -30,7 +30,7 @@ const SearchBar = () => {
         id="search"
         className="search_bar__input"
         type="text"
-        placeholder="Nunca dejes de bucar"
+        placeholder="Nunca dejes de buscar"
         value={search}
         onChange={handleChange}
       />
