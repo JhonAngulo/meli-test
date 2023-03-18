@@ -10,6 +10,8 @@ const MainLayout = () => {
         <div className="header__nav">
           <picture>
             <img
+              width={53}
+              height={36}
               src={logoMeli}
               srcSet={`${logoMeli2x as string} 2x`}
               alt="logo mercado libre"

@@ -1,8 +1,8 @@
 import axios from 'axios'
 
 const apiInstance = axios.create({
-  baseURL: 'https://api.mercadolibre.com/',
-  timeout: 1000
+  baseURL: 'http://localhost:3000/api/v1/',
+  timeout: 5000
   // headers: { 'X-Custom-Header': 'foobar' }
 })
 

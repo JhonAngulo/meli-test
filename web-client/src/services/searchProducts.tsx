@@ -7,7 +7,7 @@ const searchProductsRequest = async ({ search }: SearchProductsRequest) => {
     limit: 4
   }
 
-  const { data } = await apiInstance.get('sites/MLA/search', {
+  const { data } = await apiInstance.get('items', {
     params
   })
 

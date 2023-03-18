@@ -9,7 +9,6 @@ class ItemsServices {
   }
 
   async search({ q, limit }) {
-    console.log('limit', limit)
     const url =
       'https://api.mercadolibre.com/sites/MLA/search?' +
       new URLSearchParams({ q, limit })
@@ -19,7 +18,7 @@ class ItemsServices {
     const responseStructure = {
       author: {
         name: 'Jhon',
-        lastName: 'Angulo'
+        lastname: 'Angulo'
       }
     }
 
@@ -34,14 +33,14 @@ class ItemsServices {
         },
         picture: item.thumbnail,
         condition: item.condition,
-        free_shipping: item.shipping.free_shipping
+        freeShipping: item.shipping.free_shipping
       }
     })
 
     responseStructure.categories =
       itemsMeli.available_filters
         .filter((filter) => filter.id === 'category')[0]
-        .values.sort((x, y) => y.results - x.results)
+        ?.values.sort((x, y) => y.results - x.results)
         .slice(0, 4)
         .reverse() || []
     responseStructure.items = items

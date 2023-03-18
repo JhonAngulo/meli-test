@@ -9,10 +9,9 @@ const itemsServices = new ItemsServices()
 
 router.get('/', async (req, res, next) => {
   const { q, limit = 4 } = req.query
-  console.log('params', q, limit)
   try {
     const items = await itemsServices.search({ q, limit })
-    response.success({ req, res, message: 'Items List', data: items })
+    response.success({ req, res, message: 'Items List', results: items })
   } catch (error) {
     next(error)
   }
@@ -26,7 +25,7 @@ router.get(
 
     try {
       const item = await itemsServices.getById({ id })
-      response.success({ req, res, message: 'Item details', data: item })
+      response.success({ req, res, message: 'Item details', results: item })
     } catch (error) {
       next(error)
     }

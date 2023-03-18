@@ -1,3 +1,4 @@
+import Breadcrumb from '@components/Breadcrumb'
 import ProductCard from '@components/ProductCard'
 import { searchProductsRequest } from '@services/searchProducts'
 import { useEffect, useRef, useState } from 'react'
@@ -5,6 +6,7 @@ import { useSearchParams } from 'react-router-dom'
 
 const ListProducts = () => {
   const [productsResult, setProductsResult] = useState([])
+  const [categoriesResult, setCategoriesResult] = useState([])
   const [searchParams] = useSearchParams()
   const searchRef = useRef('')
 
@@ -14,7 +16,8 @@ const ListProducts = () => {
       if (searchRef.current !== search) {
         searchRef.current = search
         void searchProductsRequest({ search }).then((data) => {
-          setProductsResult(data)
+          setProductsResult(data?.items ?? [])
+          setCategoriesResult(data?.categories ?? [])
         })
       }
     }
@@ -23,7 +26,7 @@ const ListProducts = () => {
   return (
     <div className="page_products_list">
       <div className="page_products_list__container">
-        ListProducts
+        <Breadcrumb categoriesResult={categoriesResult} />
         <div className="page_products_list__container-list">
           {productsResult.map((product: any) => (
             <ProductCard key={product.id} {...product} />

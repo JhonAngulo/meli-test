@@ -1,0 +1,24 @@
+.breadcrumb {
+
+  &__container {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  &__link {
+    color: $text-tertiary-color;
+    text-decoration: none;
+
+    &:last-child {
+      font-weight: 600;
+    }
+  }
+
+  &__separator {
+    margin-left: 10px;
+    margin-right: 10px;
+
+  }
+}

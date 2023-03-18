@@ -32,7 +32,7 @@ const SearchBar = () => {
     if (search?.length != null) {
       setSearch(search)
     }
-  }, [])
+  }, [searchParams])
 
   return (
     <form onSubmit={handleSubmit} className="search_bar">
@@ -49,6 +49,8 @@ const SearchBar = () => {
       />
       <button type="submit" className="search_bar__button">
         <img
+          width={18}
+          height={18}
           className="search_bar__button-icon"
           src={ic_Search}
           srcSet={`${ic_Search2x as string} 2x`}
