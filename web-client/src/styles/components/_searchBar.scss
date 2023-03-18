@@ -25,7 +25,6 @@
     &:focus-visible {
       outline: none;
     }
-
   }
 
   &__button {
@@ -38,7 +37,7 @@
     border: none;
 
     &::before {
-      content: "";
+      content: '';
       display: block;
       height: 26px;
       border-left: 1px solid #e6e6e6;
@@ -61,6 +60,4 @@
       border-width: 1.5px;
     }
   }
-
-
 }
