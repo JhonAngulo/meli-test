@@ -1,0 +1,39 @@
+html {
+  // overflow: hidden;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $background-color;
+  width: 100%;
+  min-width: 360px;
+  height: 100vh;
+}
+
+.header {
+  height: 60px;
+  background: $primary-color;
+  padding: 0 5%;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 15px;
+  grid-row-gap: 0px;
+
+  &__nav {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    grid-area: 1 / 2 / 2 / 12;
+  }
+}
+
+*:focus {
+  border-style: solid;
+  border-color: $secundary-color;
+  border-width: 1.5px;
+}
+
+*:focus-visible {
+  outline: none;
+}

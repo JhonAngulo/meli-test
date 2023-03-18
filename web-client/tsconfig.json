@@ -20,8 +20,10 @@
       "@assets/*": ["./src/assets/*"],
       "@components/*": ["./src/components/*"],
       "@containers/*": ["./src/containers/*"],
-      "@pages/*": ["./src/pages/*"],
       "@layout/*": ["./src/layout/*"],
+      "@models/*": ["./src/models/*"],
+      "@pages/*": ["./src/pages/*"],
+      "@services/*": ["./src/services/*"],
       "@store/*": ["./src/store/*"],
       "@utils/*": ["./src/utils/*"]
     }
