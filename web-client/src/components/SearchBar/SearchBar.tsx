@@ -1,9 +1,15 @@
 import ic_Search from '@assets/ic_Search.png'
 import ic_Search2x from '@assets/ic_Search@2x.png.png.png'
-import { type ChangeEventHandler, useState, type FormEventHandler } from 'react'
-import { useNavigate } from 'react-router-dom'
+import {
+  type ChangeEventHandler,
+  useState,
+  type FormEventHandler,
+  useEffect
+} from 'react'
+import { useNavigate, useSearchParams } from 'react-router-dom'
 
 const SearchBar = () => {
+  const [searchParams] = useSearchParams()
   const navigate = useNavigate()
 
   const [search, setSearch] = useState('')
@@ -20,6 +26,13 @@ const SearchBar = () => {
   ) => {
     setSearch(event.target.value)
   }
+
+  useEffect(() => {
+    const search = searchParams.get('search')
+    if (search?.length != null) {
+      setSearch(search)
+    }
+  }, [])
 
   return (
     <form onSubmit={handleSubmit} className="search_bar">

@@ -13,8 +13,7 @@ const ListProducts = () => {
     if (search?.length != null) {
       if (searchRef.current !== search) {
         searchRef.current = search
-        searchProductsRequest({ search }).then((data) => {
-          console.log(data)
+        void searchProductsRequest({ search }).then((data) => {
           setProductsResult(data)
         })
       }
