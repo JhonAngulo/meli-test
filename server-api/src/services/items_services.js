@@ -38,8 +38,6 @@ class ItemsServices {
       }
     })
 
-    console.log('test', itemsMeli.results[0])
-
     responseStructure.categories =
       itemsMeli.available_filters
         .filter((filter) => filter.id === 'category')[0]
@@ -52,16 +50,36 @@ class ItemsServices {
   }
 
   async getById({ id }) {
-    const item = this.table.find((item) => item.id === id)
-    if (!item) {
+    console.log('search by id', id)
+
+    const url = `https://api.mercadolibre.com/items/${id}`
+    const response = await fetch(url)
+    const itemMeli = await response.json()
+
+    const responseDescription = await fetch(url + '/description')
+    const descriptionMeli = await responseDescription.json()
+
+    // const item = this.table.find((item) => item.id === id)
+    if (Object.keys(itemMeli).length === 0) {
       throw boom.notFound(`Item id ${id} was not found`)
     }
 
-    if (!item.enable) {
-      throw boom.conflict(`Item id ${id} was disabled`)
+    const itemResponse = {
+      id: itemMeli.id,
+      title: itemMeli.title,
+      price: {
+        currency: itemMeli.currency_id,
+        amount: itemMeli.available_quantity,
+        decimals: itemMeli.price
+      },
+      picture: itemMeli.pictures[0].url,
+      condition: itemMeli.condition,
+      freeShipping: itemMeli.shipping.free_shipping,
+      soldQuantity: itemMeli.sold_quantity,
+      description: descriptionMeli.plain_text
     }
 
-    return item || {}
+    return itemResponse || {}
   }
 }
 
