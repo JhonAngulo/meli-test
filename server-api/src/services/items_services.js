@@ -33,9 +33,12 @@ class ItemsServices {
         },
         picture: item.thumbnail,
         condition: item.condition,
-        freeShipping: item.shipping.free_shipping
+        freeShipping: item.shipping.free_shipping,
+        stateName: item.address.state_name
       }
     })
+
+    console.log('test', itemsMeli.results[0])
 
     responseStructure.categories =
       itemsMeli.available_filters

@@ -11,7 +11,6 @@ interface BreadcrumbProps {
 }
 
 const Breadcrumb = ({ categoriesResult }: BreadcrumbProps) => {
-  // console.log('test', categoriesResult)
   return (
     <div className="breadcrumb__container">
       {categoriesResult.map((item, i) => {
