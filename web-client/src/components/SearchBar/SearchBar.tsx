@@ -31,6 +31,8 @@ const SearchBar = () => {
     const search = searchParams.get('search')
     if (search?.length != null) {
       setSearch(search)
+    } else {
+      setSearch('')
     }
   }, [searchParams])
 

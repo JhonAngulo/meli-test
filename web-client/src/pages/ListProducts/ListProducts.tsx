@@ -28,14 +28,14 @@ const ListProducts = () => {
   return (
     <div className="page_products_list">
       <div className="page_products_list__container">
-        <Breadcrumb categoriesResult={categoriesResult} />
+        <Breadcrumb breadcrumbList={categoriesResult} />
         <div className="page_products_list__container-list">
           {productsResult.map((product: Product, i) => {
             return (
-              <>
-                <ProductCard key={product.id} {...product} />
+              <div key={product.id}>
+                <ProductCard {...product} />
                 {i !== productsResult.length - 1 && <Divider />}
-              </>
+              </div>
             )
           })}
         </div>

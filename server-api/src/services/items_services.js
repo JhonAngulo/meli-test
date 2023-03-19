@@ -15,12 +15,7 @@ class ItemsServices {
     const response = await fetch(url)
     const itemsMeli = await response.json()
 
-    const responseStructure = {
-      author: {
-        name: 'Jhon',
-        lastname: 'Angulo'
-      }
-    }
+    const responseStructure = {}
 
     const items = await itemsMeli.results.map((item) => {
       return {
@@ -50,8 +45,6 @@ class ItemsServices {
   }
 
   async getById({ id }) {
-    console.log('search by id', id)
-
     const url = `https://api.mercadolibre.com/items/${id}`
     const response = await fetch(url)
     const itemMeli = await response.json()
@@ -65,18 +58,20 @@ class ItemsServices {
     }
 
     const itemResponse = {
-      id: itemMeli.id,
-      title: itemMeli.title,
-      price: {
-        currency: itemMeli.currency_id,
-        amount: itemMeli.available_quantity,
-        decimals: itemMeli.price
-      },
-      picture: itemMeli.pictures[0].url,
-      condition: itemMeli.condition,
-      freeShipping: itemMeli.shipping.free_shipping,
-      soldQuantity: itemMeli.sold_quantity,
-      description: descriptionMeli.plain_text
+      item: {
+        id: itemMeli.id,
+        title: itemMeli.title,
+        price: {
+          currency: itemMeli.currency_id,
+          amount: itemMeli.available_quantity,
+          decimals: itemMeli.price
+        },
+        picture: itemMeli.pictures[0].url,
+        condition: itemMeli.condition,
+        freeShipping: itemMeli.shipping.free_shipping,
+        soldQuantity: itemMeli.sold_quantity,
+        description: descriptionMeli.plain_text
+      }
     }
 
     return itemResponse || {}

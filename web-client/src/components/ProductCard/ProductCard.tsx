@@ -1,6 +1,7 @@
 import ic_shipping from '@assets/ic_shipping.png'
 import ic_shipping2x from '@assets/ic_shipping@2x.png.png.png'
 import { type Product } from '@models/productsModel'
+import changeConditionText from '@utils/changeConditionText'
 import { useNavigate } from 'react-router-dom'
 
 const ProductCard = (product: Product) => {
@@ -40,7 +41,9 @@ const ProductCard = (product: Product) => {
           )}
         </p>
         <p className="product_card__details-title">{title}</p>
-        <p className="product_card__details-condition">{condition}</p>
+        <p className="product_card__details-condition">
+          {changeConditionText(condition)}
+        </p>
       </div>
       <div>
         <p className="product_card__details-state">{stateName}</p>

@@ -1,15 +1,15 @@
 'use strict'
 
-exports.success = ({
-  req,
-  res,
-  statusCode = 200,
-  message = '',
-  results = []
-}) => {
+exports.success = ({ req, res, statusCode = 200, message = '', data = [] }) => {
   res.status(statusCode).json({
     statusCode,
-    results,
+    data: {
+      author: {
+        name: 'Jhon',
+        lastname: 'Angulo'
+      },
+      ...data
+    },
     message
   })
 }

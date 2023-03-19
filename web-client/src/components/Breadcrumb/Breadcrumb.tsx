@@ -3,17 +3,17 @@ import { Link } from 'react-router-dom'
 interface Category {
   id: string
   name: string
-  results: number
+  results?: number
 }
 
 interface BreadcrumbProps {
-  categoriesResult: Category[]
+  breadcrumbList: Category[]
 }
 
-const Breadcrumb = ({ categoriesResult }: BreadcrumbProps) => {
+const Breadcrumb = ({ breadcrumbList }: BreadcrumbProps) => {
   return (
     <div className="breadcrumb__container">
-      {categoriesResult.map((item, i) => {
+      {breadcrumbList.map((item, i) => {
         return (
           <Link
             to={`/items?search=${item.name}`}
@@ -21,7 +21,7 @@ const Breadcrumb = ({ categoriesResult }: BreadcrumbProps) => {
             className="breadcrumb__link"
           >
             {item.name}
-            {i !== categoriesResult.length - 1 && (
+            {i !== breadcrumbList.length - 1 && (
               <span className="breadcrumb__separator">{`>`}</span>
             )}
           </Link>

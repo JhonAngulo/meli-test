@@ -1,4 +1,7 @@
-import { type SearchProductsRequest } from '@models/productsModel'
+import {
+  type GetProductRequest,
+  type SearchProductsRequest
+} from '@models/productsModel'
 import apiInstance from './axiosInstance'
 
 const searchProductsRequest = async ({ search }: SearchProductsRequest) => {
@@ -11,7 +14,13 @@ const searchProductsRequest = async ({ search }: SearchProductsRequest) => {
     params
   })
 
-  return data.results
+  return data.data
 }
 
-export { searchProductsRequest }
+const getProductsById = async ({ id }: GetProductRequest) => {
+  const { data } = await apiInstance.get(`items/${id}`)
+
+  return data.data
+}
+
+export { searchProductsRequest, getProductsById }

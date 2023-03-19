@@ -1,7 +1,17 @@
-// * {
-//   margin: 0;
-//   padding: 0;
-// }
+* {
+  box-sizing: border-box;
+}
+
+
+*:focus {
+  border-style: solid;
+  border-color: $secundary-color;
+  border-width: 1.5px;
+}
+
+*:focus-visible {
+  outline: none;
+}
 
 html {
   box-sizing: border-box;
@@ -32,12 +42,25 @@ body {
   }
 }
 
-*:focus {
-  border-style: solid;
-  border-color: $secundary-color;
-  border-width: 1.5px;
-}
+.button {
+  border: none;
+  border-radius: 6px;
+  color: $white-color;
+  cursor: pointer;
+  font-size: 16px;
+  height: 48px;
+  transition: background-color .2s ease-out,-webkit-box-shadow .25s ease-out;
 
-*:focus-visible {
-  outline: none;
+  &__primary {
+    background-color: $secundary-color;
+
+    &:hover {
+      background-color: #2968c8;
+    }
+  }
+
+  &__fullWidth {
+    width: 100%;
+  }
+
 }

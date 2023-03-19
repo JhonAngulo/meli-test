@@ -11,7 +11,7 @@ router.get('/', async (req, res, next) => {
   const { q, limit = 4 } = req.query
   try {
     const items = await itemsServices.search({ q, limit })
-    response.success({ req, res, message: 'Items List', results: items })
+    response.success({ req, res, message: 'Items List', data: items })
   } catch (error) {
     next(error)
   }
@@ -25,7 +25,7 @@ router.get(
 
     try {
       const item = await itemsServices.getById({ id })
-      response.success({ req, res, message: 'Item details', results: item })
+      response.success({ req, res, message: 'Item details', data: item })
     } catch (error) {
       next(error)
     }
