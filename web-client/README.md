@@ -26,6 +26,14 @@ npm run dev
 
 for production execute the command "npm run build" and serve the content of the "dist" folder
 
+### Format and Linter code
+
+  *  npm run lint
+  *  npm run lint:fix
+  *  npm run format"
+  *  npm run format:fix
+
+
 ### Requirements:
 
 * Node: 18.15.0

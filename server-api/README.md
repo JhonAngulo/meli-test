@@ -22,6 +22,19 @@ To run the project in development mode, you must be in the root of the project.
 npm run dev
 ```
 
+## Mode of production
+
+```
+npm run start
+```
+
+### Format and Linter code
+
+  *  npm run lint
+  *  npm run lint:fix
+  *  npm run format"
+  *  npm run format:fix
+
 ### Requirements:
 
 * Node: 18.15.0
