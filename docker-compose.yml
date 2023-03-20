@@ -3,18 +3,19 @@ version: '3.8'
 services:
   server:
     build:
-      context: .
-    container_name: meli-app
-    # command: npm run dev
-    # ports:
-    #   - 3000:3000
-    #   - 3001:3001
-    # networks:
-    #   - myNetwork
-    # environment:
-    #   NODE_ENV: development
+      context: ./server-api/.
+    container_name: server-api
+    command: npm run dev
+    ports:
+      - 3000:3000
+    environment:
+      - PORT=3000
+      - ALLOW_ORIGIN=["http://localhost:3001" , "http://127.0.0.1:3001"]
 
-# networks:
-#   myNetwork:
-#     # Use a custom driver
-#     driver: bridge
+  client:
+    build:
+      context: ./web-client/.
+    container_name: web-client
+    command: npm run dev
+    ports:
+      - 3001:3001
