@@ -8,9 +8,13 @@
     ]
   },
   "scripts": {
-    "dev": "lerna run --parallel dev"
+    "dev": "lerna run --parallel dev",
+    "prepare": "husky install"
   },
   "devDependencies": {
     "lerna": "^6.5.1"
+  },
+  "dependencies": {
+    "husky": "^8.0.3"
   }
 }
