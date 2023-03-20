@@ -4,6 +4,9 @@ COPY ./package*.json ./
 RUN npm install && npm install -g serve
 COPY ./ ./
 
+ARG SERVER_URL_BASE
+ENV VITE_PUBLIC_SERVER_URL_BASE=$SERVER_URL_BASE
+
 CMD ["bin/www"]
 # Build APP
 RUN npm run build

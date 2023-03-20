@@ -15,6 +15,8 @@ services:
   client:
     build:
       context: ./web-client/.
+      args: 
+        - SERVER_URL_BASE=http://localhost:3000/api/v1/
     container_name: web-client
     command: npm run dev
     ports:
